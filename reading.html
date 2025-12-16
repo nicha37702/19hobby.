@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Insights & Benefits</title>
+    <link rel="stylesheet" href="readingstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <div class="dark-mode-switch-container">
+        <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle" onclick="toggleDarkMode()">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <header id="top">
+        <div class="header-content">
+            <h1>Reading: Discover, Learn, Grow</h1>
+            <p class="tagline">A professional approach to exploring books, gaining knowledge, and enhancing personal growth.</p>
+            <a href="#about" class="btn">Explore Insights ↓</a>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#why">Why Reading</a>
+        <a href="#types">Types</a>
+        <a href="#digital">Digital vs Paper</a>
+        <a href="#supplies">Supplies</a>
+        <a href="#insights">Insights</a>
+    </nav>
+
+    <main>
+        <section id="about" class="fade-in section-block">
+            <h2>About Reading</h2>
+            <p>Reading is an essential activity that stimulates the mind, broadens perspectives, and fosters personal development. It offers the opportunity to dive deep into different worlds, ideas, and knowledge.</p>
+        </section>
+
+        <section id="why" class="fade-in section-block">
+            <h2>Why Reading Matters</h2>
+            <p>Reading not only improves cognitive function but also helps develop empathy, enhances focus, and cultivates creativity. It's a tool that supports lifelong learning and intellectual growth.</p>
+        </section>
+
+        <section id="types" class="fade-in section-block">
+            <h2>Types of Reading</h2>
+            <p>There are many types of reading—fiction, non-fiction, academic texts, graphic novels, and more—each offering unique experiences and insights.</p>
+        </section>
+
+        <section id="digital" class="fade-in section-block">
+            <h2>Digital vs Paper Books</h2>
+            <p>Digital books provide convenience, portability, and adjustable text, while paper books offer a tactile experience, reduced screen time, and a unique sensory connection to the content.</p>
+        </section>
+
+        <section id="supplies" class="fade-in section-block">
+            <h2>Recommended Supplies</h2>
+            <div class="supplies">
+                <div class="card pop">
+                    <img src="leather book.jpg" alt="Leather Book">
+                    <h3>Leather Bound Book</h3>
+                    <p>A premium leather-bound book designed for readers who appreciate quality craftsmanship and elegance.</p>
+                </div>
+
+                <div class="card pop">
+                    <img src="bookmarks.jpg" alt="Bookmarks">
+                    <h3>Bookmarks</h3>
+                    <p>Keep track of your reading progress with stylish and functional bookmarks.</p>
+                </div>
+
+                <div class="card pop">
+                    <img src="reading light.jpg" alt="Reading Light">
+                    <h3>Reading Light</h3>
+                    <p>A compact and adjustable reading light for comfortable reading in any setting.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="insights" class="fade-in section-block">
+            <h2>Reading Benefits & Insights</h2>
+            <div class="insights">
+                <div class="insight-card pop">
+                    <h3>Increased Knowledge</h3>
+                    <p>Reading allows you to absorb new information and expand your understanding of the world.</p>
+                </div>
+                <div class="insight-card pop">
+                    <h3>Improved Focus</h3>
+                    <p>Regular reading helps sharpen your focus and mental discipline.</p>
+                </div>
+                <div class="insight-card pop">
+                    <h3>Empathy and Understanding</h3>
+                    <p>Reading fiction and personal stories increases empathy and cultural awareness.</p>
+                </div>
+                <div class="insight-card pop">
+                    <h3>Stress Relief</h3>
+                    <p>Immersing yourself in a good book is a great way to reduce stress and escape from daily pressures.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 My Reading Space | Designed with love in VS Code</p>
+        <a href="#top" class="top-btn">Back to Top ↑</a>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+            localStorage.setItem("theme", 
+                document.body.classList.contains("dark-mode") ? "dark" : "light"
+            );
+        }
+
+        window.onload = () => {
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add("dark-mode");
+                document.querySelector(".dark-mode-toggle").checked = true;
+            }
+        };
+    </script>
+</body>
+</html>

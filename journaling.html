@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journaling Insights & Benefits</title>
+    <link rel="stylesheet" href="journalingstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <div class="dark-mode-switch-container">
+        <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle" onclick="toggleDarkMode()">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <header id="top">
+        <div class="header-content">
+            <h1>Journaling: Reflect, Create, Grow</h1>
+            <p class="tagline">A professional approach to capturing thoughts, setting goals, and boosting productivity.</p>
+            <a href="#about" class="btn">Explore Insights ↓</a>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#why">Why Journaling</a>
+        <a href="#types">Types</a>
+        <a href="#digital">Digital vs Paper</a>
+        <a href="#supplies">Supplies</a>
+        <a href="#insights">Insights</a>
+    </nav>
+
+    <main>
+        <section id="about" class="fade-in section-block">
+            <h2>About Journaling</h2>
+            <p>Journaling is a structured way to capture thoughts, emotions, and experiences. It supports reflection, planning, and creative expression, transforming daily notes into meaningful insights.</p>
+        </section>
+
+        <section id="why" class="fade-in section-block">
+            <h2>Why Journaling Matters</h2>
+            <p>Beyond writing, journaling fosters mental clarity, emotional intelligence, and a focused mindset. It’s a tool that connects reflection with actionable outcomes.</p>
+        </section>
+
+        <section id="types" class="fade-in section-block">
+            <h2>Types of Journaling</h2>
+            <p>There are many journaling styles—daily logs, creative journals, reflection journals, productivity journals, and gratitude journals—each serving a different purpose.</p>
+        </section>
+
+        <section id="digital" class="fade-in section-block">
+            <h2>Digital vs Paper Journals</h2>
+            <p>Digital journals offer convenience, searchability, and multimedia integration. Paper journals provide tactile satisfaction, fewer distractions, and a stronger creative flow.</p>
+        </section>
+
+        <section id="supplies" class="fade-in section-block">
+            <h2>Recommended Supplies</h2>
+            <div class="supplies">
+                <div class="card pop">
+                    <img src="leather journal.jpg" alt="Leather Journal">
+                    <h3>Leather Journal</h3>
+                    <p>A premium leather journal designed for daily reflections, notes, or sketches. Durable, elegant, and timeless.</p>
+                </div>
+
+                <div class="card pop">
+                    <img src="fountain pen.jpg" alt="Fountain Pen">
+                    <h3>Fountain Pen</h3>
+                    <p>A smooth, precise writing experience. Comfortable to hold and eco-friendly with a refillable ink system.</p>
+                </div>
+
+                <div class="card pop">
+                    <img src="stationery.jpg" alt="Stationery">
+                    <h3>Stationery & Accessories</h3>
+                    <p>Enhance your journaling with organization tools and creative accessories.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="insights" class="fade-in section-block">
+            <h2>Journaling Benefits & Insights</h2>
+            <div class="insights">
+                <div class="insight-card pop">
+                    <h3>Enhanced Productivity</h3>
+                    <p>Structured journaling helps prioritize tasks and track progress.</p>
+                </div>
+                <div class="insight-card pop">
+                    <h3>Mental Clarity</h3>
+                    <p>Reflection reduces mental clutter and improves focus.</p>
+                </div>
+                <div class="insight-card pop">
+                    <h3>Emotional Intelligence</h3>
+                    <p>Tracking emotions boosts self-awareness and empathy.</p>
+                </div>
+                <div class="insight-card pop">
+                    <h3>Goal Achievement</h3>
+                    <p>Journaling provides a roadmap for setting and achieving goals.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 My Journaling Space | Designed with love in VS Code</p>
+        <a href="#top" class="top-btn">Back to Top ↑</a>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+            localStorage.setItem("theme", 
+                document.body.classList.contains("dark-mode") ? "dark" : "light"
+            );
+        }
+
+        window.onload = () => {
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add("dark-mode");
+                document.querySelector(".dark-mode-toggle").checked = true;
+            }
+        };
+    </script>
+</body>
+</html>

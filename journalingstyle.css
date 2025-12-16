@@ -1,0 +1,305 @@
+/* Custom Properties (Variables) - Shades of Gray Palette */
+:root {
+    /* Main Palette: Silver (Primary), Charcoal (Secondary) */
+    --color-primary-silver: #A0A0A0; /* Silver Accent/Links */
+    --color-secondary-charcoal: #333333; /* Dark Text/Primary Contrast */
+    
+    /* Background & Surfaces (Light Mode) */
+    --color-bg-light: #F7F7F7; /* Light Gray Background */
+    --color-surface-light: #FFFFFF; /* Pure White Surfaces */
+    --color-text-dark: #222222; /* Near Black Text */
+    --shadow-heavy: 0 8px 25px rgba(0, 0, 0, 0.25); /* Pronounced Shadow */
+    
+    /* Dark Mode Palette */
+    --color-bg-dark: #0D0D0D; /* Near Black */
+    --color-surface-dark: #1A1A1A; /* Deep Gray Surfaces */
+    --color-text-light: #EEEEEE;
+    --color-dark-accent: #666666; /* Dark mode silver accent */
+    --shadow-dark: 0 4px 15px rgba(255, 255, 255, 0.08);
+}
+
+/* Base (Light Mode Default) */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+    line-height: 1.7;
+    transition: background 0.5s, color 0.5s;
+}
+
+/* Dark mode */
+body.dark-mode {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+}
+
+body.dark-mode main {
+    background-color: var(--color-surface-dark);
+    box-shadow: var(--shadow-dark);
+}
+
+body.dark-mode footer,
+body.dark-mode nav {
+    background-color: var(--color-surface-dark);
+}
+
+body.dark-mode nav a {
+    color: var(--color-text-light);
+}
+
+body.dark-mode .card,
+body.dark-mode .insight-card {
+    background-color: #2B2B2B; /* Deep card background */
+}
+
+body.dark-mode h2 {
+    color: var(--color-dark-accent);
+}
+
+/* Dark-mode switch (Monochrome Accent) */
+.dark-mode-switch-container {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 200;
+}
+
+.switch {
+    width: 44px;
+    height: 24px;
+    position: relative;
+    display: inline-block;
+}
+
+.switch input { opacity: 0; }
+
+.slider {
+    position: absolute;
+    inset: 0;
+    background-color: #bbb;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+input:checked + .slider {
+    background-color: var(--color-secondary-charcoal);
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+/* Header */
+header {
+    background: linear-gradient(
+        /* Subtle Gradient from Dark Gray to Near Black */
+        rgba(51, 51, 51, 0.75), 
+        rgba(10, 10, 10, 0.75) 
+    ),
+    url('https://source.unsplash.com/1600x900/?dark,minimal,texture') center/cover no-repeat;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-surface-light); /* White text on dark header */
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    border-bottom: 5px solid var(--color-primary-silver);
+}
+
+header h1 {
+    font-size: 4rem; /* Prominent title */
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Button */
+.btn {
+    padding: 15px 30px;
+    border-radius: 4px; /* Squared, modern look */
+    text-decoration: none;
+    background-color: var(--color-secondary-charcoal);
+    color: var(--color-surface-light);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+    background-color: #555555;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Navigation */
+nav {
+    background-color: var(--color-surface-light);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid var(--color-primary-silver);
+}
+
+nav a {
+    color: var(--color-secondary-charcoal);
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    text-transform: uppercase;
+    padding: 5px 0;
+    letter-spacing: 1px;
+}
+
+nav a:hover {
+    color: var(--color-primary-silver);
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    background: var(--color-primary-silver);
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Main container */
+main {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 50px;
+    background: var(--color-surface-light);
+    border-radius: 4px; /* Squared, modern look */
+    /* CREATIVE: High-contrast heavy shadow */
+    box-shadow: var(--shadow-heavy);
+    border: 1px solid var(--color-primary-silver);
+}
+
+.section-block {
+    margin-bottom: 70px;
+}
+
+/* Titles */
+h2 {
+    color: var(--color-secondary-charcoal);
+    border-left: 5px solid var(--color-primary-silver);
+    padding-left: 15px;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Cards */
+.supplies, .insights, .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Larger card minimum */
+    gap: 35px;
+}
+
+.card, .insight-card {
+    background: var(--color-surface-light);
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: 0.4s;
+    border: 1px solid var(--color-primary-silver);
+}
+
+.card h3 a {
+    color: var(--color-secondary-charcoal);
+}
+
+.card a.card-link {
+    color: var(--color-primary-silver);
+    font-weight: 600;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    filter: grayscale(100%); /* Make images monochrome */
+    border: 2px solid var(--color-primary-silver);
+}
+
+.pop:hover {
+    transform: translateY(-8px);
+    /* CREATIVE: Pronounced lift with darker shadow */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); 
+    border-color: var(--color-secondary-charcoal);
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-secondary-charcoal);
+    color: var(--color-surface-light);
+    padding: 30px;
+    text-align: center;
+    border-top: 5px solid var(--color-primary-silver);
+}
+
+.top-btn {
+    background: var(--color-surface-light);
+    color: var(--color-secondary-charcoal);
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+.top-btn:hover {
+    background: var(--color-primary-silver);
+    color: var(--color-surface-light);
+}
+
+/* Animations (Preserved) */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.2s forwards ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px){
+    nav { flex-direction: column; gap: 15px; }
+}
